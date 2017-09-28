@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 .observeOn(AndroidSchedulers.mainThread())
                 //subcribes based on data emits like getting data from server or events listing
                 .subscribe(new Observer<String>() {
+
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
                         Log.e("onSubscribe is ", "<>>>");
