@@ -10,8 +10,10 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.realm.R;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
 
 
@@ -23,6 +25,8 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.Callable;
 
 import io.reactivex.Observable;
@@ -106,12 +110,21 @@ public class MainActivity extends AppCompatActivity {
         OkHttpClient client = new OkHttpClient();
         Request req = new Request.Builder()
                 .url("https://api.github.com/users/hadley/repos")
+                .post((RequestBody) postedParams())
                 .build();
         Response response = client.newCall(req).execute();
         if (response.isSuccessful()) {
             return response.body().source().readUtf8();
         }
         return null;
+
+    }
+
+
+    private Map<String ,String > postedParams(){
+        Map<String ,String > params = new HashMap<>();
+
+        return  params;
 
     }
 
