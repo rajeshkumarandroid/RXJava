@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         OkHttpClient client = new OkHttpClient();
         Request req = new Request.Builder()
                 .url("https://api.github.com/users/hadley/repos")
-                .post((RequestBody) postedParams())
+//                .post((RequestBody) postedParams())
                 .build();
         Response response = client.newCall(req).execute();
         if (response.isSuccessful()) {
