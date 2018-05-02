@@ -246,7 +246,7 @@ public class Operators extends AppCompatActivity {
                 @Override
                 public ObservableSource<? extends String> call() throws Exception {
                     try {
-//                        return Observable.just(getGist(url_1));
+
                         return getObserable();
                     } catch (IOException e) {
                         e.printStackTrace();
